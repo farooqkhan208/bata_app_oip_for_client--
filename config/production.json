@@ -5,7 +5,7 @@
         "name": "production"
     },
     "sql": {
-        "host": "https://webprojectmockup.com:2083/",
+        "host": "localhost:3306",
         "user": "webprojectmockup_bata_app",
         "password": "ZbnyAW?)l?x[",
         "database": "webprojectmockup_bata_app"

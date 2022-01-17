@@ -1119,10 +1119,14 @@ module.exports = class ValidationMiddleware extends Validator {
                         if (!assign) {
                             return res.status(200).send({ success: false, status: 200, msg: "No Booking Has Found" });
                         } else {
+                            const data = await Service.bookingInterpreterService.findByBookingId(assign.booking);
+
+                            if (!data) {
+                                return res.status(200).send({ success: false, status: 200, msg: "No Booking Has Found" });
+                            }
                             const [transLang] = await Service.languageService.findById(assign.language)
                             if (!transLang) transLang = {}
 
-                            const data = await Service.bookingInterpreterService.findByBookingId(assign.booking);
 
                             let [clientLang] = await Service.speakService.findByUserId(data.user_id);
                             if (!clientLang) clientLang = {}

@@ -89,7 +89,6 @@ exports.findByBookingId = findByBookingId;
 exports.findByArrayId = function (array) {
     return new Promise(function (resolve, reject) {
         try {
-            console.log(array)
             let modify = [];
             array.map(async (item, index, arr) => {
                 const [RowDataPacket] = await findByBookingId(item.booking)
@@ -109,8 +108,7 @@ exports.findByBookingId = function (booking) {
     let id = parseInt(booking)
     return new Promise(function (resolve, reject) {
         try {
-            console.log(booking)
-            sql.query(`SELECT ${select} FROM ${table} where id=${id}`,
+            sql.query(`SELECT ${select} FROM ${table} where id=${id} AND status='accept'`,
                 (err, [data]) => {
                     if (err) {
                         reject(err);

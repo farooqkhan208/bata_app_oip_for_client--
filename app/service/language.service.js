@@ -27,7 +27,6 @@ exports.create = function (req) {
 const findById = function (id) {
     return new Promise(function (resolve, reject) {
         try {
-            console.log(";lklklklkl")
             sql.query(`SELECT ${select} FROM ${table} where id=${id}`,
                 (err, result) => {
                     if (err) {

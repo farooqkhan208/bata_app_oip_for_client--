@@ -32,6 +32,7 @@ class InterpreterBookingInterPreter {
             if (totalAssign.length == 0) res.status(200).send({ status: 200, success: true, msg: "No Data Found", data: [] });
 
             let result = await bookingInterpreterService.findByArrayId(totalAssign);
+
             if (result.length > 0) {
                 let modify = []
                 if (result.length > 0) {
@@ -40,13 +41,11 @@ class InterpreterBookingInterPreter {
                             const [occa] = await findOccationById(item.occasion)
                             item.occasion = occa;
 
-                            const userLang = await speakService.findByUserId(item.user_id);
+                            const [userLang] = await speakService.findByUserId(item.user_id);
 
-                            // const lang = await findByIdLang(userLang.language);
+                            const [lang] = await findByIdLang(userLang.language);
 
-                            // console.log(lang)
-
-                            // item.primary_language = lang;
+                            item.primary_language = lang;
 
                             const [transLanguage] = await assignInterpreterService.findByBothId(req.user.id, item.id)
                             const [assignLanguage] = await findByIdLang(transLanguage.language);
@@ -68,6 +67,7 @@ class InterpreterBookingInterPreter {
                                 status: 200,
                                 success: true,
                                 msg: "Fetched Succesfully",
+                                count: modify.length,
                                 data: modify
                             });
                         }

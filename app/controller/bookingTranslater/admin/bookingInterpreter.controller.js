@@ -95,7 +95,7 @@ class AdminBookingInterPreter {
                     // send notification to interpreter
                     await notification.sendToInterpreter(element.interpreter, "Assign To Client", "Click here To show Client", { user: req.booking.user_id, lat: "89898", longe: "0909", type: "accepted" });
                     //Assign Interpreter
-                    await assignInterpreterService.create({ booking: req.params.id, interpreter: element.interpreter });
+                    await assignInterpreterService.create({ booking: req.params.id, interpreter: element.interpreter, language: element.language });
 
                     //update interpreter status
                     await userUpdate(element.interpreter, { status: "active" });
