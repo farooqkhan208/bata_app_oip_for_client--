@@ -5,7 +5,7 @@
         "name": "production"
     },
     "sql": {
-        "host": "localhost:3306",
+        "host": "69.167.137.35",
         "user": "webprojectmockup_bata_app",
         "password": "ZbnyAW?)l?x[",
         "database": "webprojectmockup_bata_app"
