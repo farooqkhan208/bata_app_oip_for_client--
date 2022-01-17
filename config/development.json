@@ -1,0 +1,17 @@
+{
+    "origin": "http://localhost:6000",
+    "db": {
+        "name": "development"
+    },
+    "sql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "bata2"
+    },
+    "twilio": {
+        "service_SID": "VAe824c39ca9715ad0925b6e72fb00d2ef",
+        "account_SID": "AC3120ccee4b1bcb655cbce140cb8d49ab",
+        "account_Token": "1cf711f3082b135d7ef5a732d1e40312"
+    }
+}
