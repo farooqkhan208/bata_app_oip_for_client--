@@ -3,5 +3,16 @@
     "front": "https://students.minnesotarealtyschool.com",
     "db": {
         "name": "production"
+    },
+    "sql": {
+        "host": "localhost",
+        "user": "webprojectmockup_bata_app",
+        "password": "ZbnyAW?)l?x[",
+        "database": "webprojectmockup_bata_app"
+    },
+    "twilio": {
+        "service_SID": "VAe824c39ca9715ad0925b6e72fb00d2ef",
+        "account_SID": "AC3120ccee4b1bcb655cbce140cb8d49ab",
+        "account_Token": "1cf711f3082b135d7ef5a732d1e40312"
     }
 }
